@@ -1,4 +1,4 @@
-The Fixlet Dataminer is an application that allows users to visualize
+The Fixlet Historian is an application that allows users to visualize
 differences between any two versions of a fixlet, as well as inspect a site's
 history. It leverages the presence of existing content on `sync.bigfix.com` to
 produce this analysis.
