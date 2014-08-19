@@ -223,3 +223,7 @@ Bugs
    duplicates fail to update properly.
 
  * HTML escaping may be inconsistent.
+
+Support
+===
+Any issues or questions regarding this software should be filed via [GitHub issues](https://github.com/bigfix/fixlet-historian/issues).
