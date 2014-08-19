@@ -1,15 +1,19 @@
 {
-  "name": "fixlet-datamining",
-  "version": "0.0.0",
+  "name": "Fixlet Historian",
+  "version": "1.0.0",
   "authors": [
     "Derek Leung <leungd@us.ibm.com>"
   ],
-  "description": "A frontend for fixlet data",
+  "description": "A frontend to display fixlet and site history",
   "keywords": [
     "fixlet",
-    "datamining"
+    "site",
+    "history",
+    "version",
+    "diff",
+    "differential"
   ],
-  "license": "IBM",
+  "license": "Apache",
   "private": true,
   "ignore": [
     "**/.*",

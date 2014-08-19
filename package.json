@@ -1,7 +1,7 @@
 {
-  "name": "FixletDatamining",
-  "version": "0.0.0",
-  "description": "server for fixlet datamining project",
+  "name": "Fixlet Historian",
+  "version": "1.0.0",
+  "description": "A server for fixlet and site history",
   "main": "main.js",
   "dependencies": {
     "ejs": "^1.0.0",
@@ -14,8 +14,12 @@
   },
   "keywords": [
     "fixlet",
-    "datamining"
+    "site",
+    "history",
+    "version",
+    "diff",
+    "differential"
   ],
   "author": "Derek Leung",
-  "license": "IBM"
+  "license": "Apache"
 }
