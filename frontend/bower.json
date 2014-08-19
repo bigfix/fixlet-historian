@@ -1,0 +1,25 @@
+{
+  "name": "fixlet-datamining",
+  "version": "0.0.0",
+  "authors": [
+    "Derek Leung <leungd@us.ibm.com>"
+  ],
+  "description": "A frontend for fixlet data",
+  "keywords": [
+    "fixlet",
+    "datamining"
+  ],
+  "license": "IBM",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.19"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "FixletDatamining",
+  "version": "0.0.0",
+  "description": "server for fixlet datamining project",
+  "main": "main.js",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.4.5",
+    "sqlite3": "^2.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fixlet",
+    "datamining"
+  ],
+  "author": "Derek Leung",
+  "license": "IBM"
+}

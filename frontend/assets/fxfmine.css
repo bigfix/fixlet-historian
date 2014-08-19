@@ -1,0 +1,180 @@
+* {
+		margin: 0;
+}
+
+.page-header {
+		text-align: center;
+		font-size: 72;
+		font-family: sans-serif;
+		font-weight: lighter;		
+}
+
+.small-page-header {
+		text-align: center;
+		font-size: 36;
+		font-family: sans-serif;
+		font-weight: lighter;		
+}
+
+.search-form-container {
+		text-align: center;
+		width: 50%;
+		margin: auto;
+}
+
+.search-form-row-container {
+		text-align: right;
+		margin: 5px;
+}
+
+.search-form-row-container input {
+		width: 50%;
+}
+
+#site-field {
+		width: 40%;
+		margin-right: 10%;
+}
+
+#fixlet-id-field {
+		width: 15%;
+		margin-right: 35%;
+}
+
+.search-form-button-container {
+		text-align: center;
+}
+
+.form-submit-button {
+
+}
+
+span.muted {
+		color: gray;
+}
+
+span.muted a {
+		color: gray;
+}
+
+a {
+		color: black;
+		text-decoration: none;
+}
+
+a:hover {
+		text-decoration: underline;
+}
+
+span.emphasized {
+		color: red;
+}
+
+span.revision-selected {
+		font-weight: bold;
+		text-decoration: underline;
+		border: 1px solid;
+		padding: 1px;
+}
+
+span.removed {
+		background-color: #FF8080;
+}
+
+span.added {
+		background-color: #80FF80;
+}
+
+span.changed {
+		background-color: #FFFF80;
+}
+
+div.removed {
+		background-color: #FF8080;
+}
+
+div.added {
+		background-color: #80FF80;
+}
+
+.revisions-container {
+		margin-left: 5px;
+}
+
+.revision-history-container {
+		display: inline-block;
+		margin-top: 5px;
+		width: 49%;
+}
+
+.revision-history-row div {
+		width: 50%;
+		float: left;
+}
+
+.revision-history-version {
+
+}
+
+.diff-container {
+		margin: 5px;
+		float: left;
+}
+
+.diff-panel {
+		display: inline-block;
+		width: 49%;
+		vertical-align: top;
+		border: 1px solid gray;
+		padding: 1px;
+		font-size: small;
+		font-family: "Source Code Pro", monospace;
+}
+
+.diff-label {
+
+}
+
+.site-container {
+		margin-left: 5px;
+		text-align: center;
+}
+
+.site-history-container {
+		display: inline-block;
+		margin-top: 5px;
+		width: 75%;
+		text-align: left;
+}
+
+.site-history-container a:hover div {
+		background-color: #C0C0C0;
+}
+
+.site-history-row div {
+		width: 33%;
+		float: left;
+}
+
+.site-history-version {
+
+}
+
+.site-version-container {
+		display: inline-block;
+		margin-top: 5px;
+		width: 25%;
+}
+
+.site-version-row div {
+		width: 50%;
+		float: left;
+}
+
+.site-version-fixlet {
+		text-align: left;
+}
+
+.site-version-type {
+		text-align: right;
+}

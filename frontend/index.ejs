@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Fixlet Datamining Prototype</title>
+		<link href="assets/fxfmine.css" rel="stylesheet" type="text/css">		
+		<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="page-header">
+			Fixlet Differential
+		</div>
+		<form action="diff">
+			<div class="search-form-container">
+				<div class="search-form-row-container">
+					<label for="site-field">
+						Site<span class="form-required">*</span>:
+					</label>
+
+					<select name="site" id="site-field">
+						<% sites.forEach(function (site) { %>
+						  <option value="<%= site.id %>"><%= site.name %></option>
+						<% }) %>
+					</select>
+					
+				</div>
+				<div class="search-form-row-container">
+					<label for="fixlet-id-field">
+						Fixlet ID:
+					</label>
+					<input name="fixlet-id" class="form-fixlet-id-field" id="fixlet-id-field" value="None">
+				</div>
+				<!-- <div class="search-form-row-container"> -->
+				<!-- 	<label for="fixlet-name-field"> -->
+				<!-- 		Fixlet name: -->
+				<!-- 	</label> -->
+				<!-- 	<input class="form-text-field" id="fixlet-name-field" /> -->
+				<!-- </div> -->
+			</div>
+			<div class="search-form-button-container">
+				<input class="form-submit-button" value="Search" type="submit" />
+			</div>
+		</form>
+		<!-- <div class="search-results-container"> -->
+
+		<!-- </div> -->
+	</body>
+</html>

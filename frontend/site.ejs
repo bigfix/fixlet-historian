@@ -1,0 +1,64 @@
+<% if (version == -1) { %>
+<html>
+	<head>
+		<title>Site History of <%= title %></title>
+		<link href="assets/fxfmine.css" rel="stylesheet" type="text/css">		
+		<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="small-page-header">
+			<a href="<%= siteUrl %>"><%= title %></a><span class="muted"> - Site History</span>
+		</div>
+
+		<div class="site-container">
+			<div class="site-history-container">
+				<div class="site-history-row">
+					<div class="site-history-publication-label">Publication</div>
+					<div class="site-history-version-label">Version</div>
+					<div class="site-history-affected-label">Fixlets Affected</div>
+				</div>
+				<% revisions.forEach(function (revision) { %>
+				<a href="site?site=<%= site %>&version=<%= revision.version %>">
+					<div class="site-history-row">
+						<div class="site-history-publication"><%= revision.published %></div>
+						<div class="site-history-version"><%= revision.version %></div>
+						<div class="site-history-affected">
+							<%= revision.affected %>
+						</div>
+					</div>
+				</a>
+				<% }) %>
+			</div>
+		</div>
+	</body>
+</html>
+<% } else { %>
+<html>
+	<head>
+		<title>Version <%= version %> of <%= title %></title>
+		<link href="assets/fxfmine.css" rel="stylesheet" type="text/css">		
+		<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="small-page-header">
+			<span class="muted">(Version <span class="emphasized"><%= version %></span>) - </span><a href="<%= siteUrl %>"><%= title %></a><span class="muted"> on </span><%= published %>
+		</div>
+
+		<div class="site-container">
+			<div class="site-version-container">
+				<% allRevisionTypes.forEach(function (type) { %>
+				  <% if (type in changes) { %>
+				     <% changes[type].forEach(function (fixlet) { %>
+					
+				<div class="site-version-row">
+						<div class="site-version-fixlet"><a href="diff?site=<%= site %>&fixlet-id=<%= fixlet%>&old-version=-2&new-version=<%= version %>"><%= fixlet %></a></div>
+						<div class="site-version-type"><span class="<%= type %>"><%= type %></span></div>
+			  </div>
+				    <% }) %>
+				  <% } %>
+				<% }) %>
+			</div>
+		</div>
+	</body>
+</html>
+<% } %>

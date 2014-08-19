@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Version History of "<%= title %>"</title>
+		<link href="assets/fxfmine.css" rel="stylesheet" type="text/css">		
+		<link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="small-page-header">
+			<span class="muted">(ID:<span class="emphasized"><%= fixletId %></span>)</span>
+			<%= title %>
+			<span class="muted"> - <a href="<%= siteUrl %>"><%= siteName%></a></span>
+		</div>
+
+		<div class="revisions-container">
+			<div class="revision-history-container">
+				<div class="revision-history-row">
+					<div class="revision-history-publication-label">Publication</div>
+					<div class="revision-history-version-label">Version</div>
+				</div>
+				<% revisions.forEach(function (revision) { %>
+				<div class="revision-history-row">
+					<div class="revision-history-publication"><%= revision.published %></div>
+					<div class="revision-history-version">
+
+						<% if (revision.version == oldVersion) { %>
+						<span class="revision-selected">
+						<% } %>
+						<a href="diff?site=<%= siteId %>&fixlet-id=<%= fixletId %>&old-version=<%= revision.version %>&new-version=<%= newVersion %>">
+							<%= revision.version %>
+						</a>
+						<% if (revision.version == oldVersion) { %>
+						</span>
+						<% } %>
+
+					</div>
+				</div>
+				<% }) %>
+				
+			</div>
+			<div class="revision-history-container">
+				<div class="revision-history-row">
+					<div class="revision-history-publication-label">Publication</div>
+					<div class="revision-history-version-label">Version</div>
+				</div>
+				<% revisions.forEach(function (revision) { %>
+				<div class="revision-history-row">
+					<div class="revision-history-publication"><%= revision.published %></div>
+					<div class="revision-history-version">
+
+						<% if (revision.version == newVersion) { %>
+						<span class="revision-selected">
+						<% } %>
+						<a href="diff?site=<%= siteId %>&fixlet-id=<%= fixletId %>&old-version=<%= oldVersion %>&new-version=<%= revision.version %>">
+							<%= revision.version %>
+						</a>
+						<% if (revision.version == newVersion) { %>
+						</span>
+						<% } %>
+
+					</div>
+				</div>
+				<% }) %>
+				
+			</div>
+		</div>
+
+		<div class="diff-container">
+
+			<% allKeys.forEach(function (key) { %>
+			  <% for (var i = 0; i < Math.max(oldContents[key].length, newContents[key].length); i++) { %>
+			<div class="diff-label">
+				<%= key + ' #' + (i+1) %>
+			</div>
+			<div class="diff-panel-container">
+				<div class="diff-panel">
+				<% if (key in oldContents && i < oldContents[key].length && oldContents[key][i] != '') { %>
+					<%- oldContents[key][i] %>
+				<% } else { %>
+				  <span class="muted">added</span>
+				<% } %>
+				</div>
+
+				<div class="diff-panel">
+				<% if (key in newContents && i < newContents[key].length && newContents[key][i] != '') { %>
+					<%- newContents[key][i] %>
+				<% } else { %>
+				  <span class="muted">removed</span>
+				<% } %>
+				</div>
+			</div>
+			  <% } %>
+			<% }) %>
+		</div>
+	</body>
+</html>
