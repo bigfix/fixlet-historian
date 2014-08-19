@@ -1,5 +1,5 @@
 {
-  "name": "Fixlet Historian",
+  "name": "Fixlet-Historian",
   "version": "1.0.0",
   "description": "A server for fixlet and site history",
   "main": "main.js",
