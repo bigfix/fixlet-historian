@@ -21,36 +21,57 @@ Requirements
 Installation
 ===
 
- 1. Download and extract the files to where you want your server to be.
+ 1. Download the files to where you want your server to be.
 
- 2. Install `requests`. You can follow the instructions
-    [here](http://docs.python-requests.org/en/latest/user/install/#install) to
-    install it.
+        $ git clone git@github.com:bigfix/fixlet-historian
+
+ 2. Install `requests`.
+
+        $ pip install requests
+
+    Go [here](http://docs.python-requests.org/en/latest/user/install/#install)
+    for more information.
 
  3. Get the application seed. There are several ways to do this:
 
-    * You can download the seed database itself `fxfdata.db` (around 1.5 GB)
-      from <here>.
+   * You can download the seed database itself `fxfdata.db` (around 2 GB).
 
-    * You can download `seed_cache.txt` (around 150 KB) from <here> and then run
-      `python seed.py`. The presence of this file greatly speeds up the creation
-      of the seed database, and this should take around 10 minutes to run.
+        $ wget <todo>
 
-    * You can run `python seed.py` by itself. This will build both the cache
-      file and the seed database. Be aware that this takes a very long time and
-      should probably be run overnight.
+   * You can download `seed_cache.txt` (around 150 KB) from <here> and then run
+     `python seed.py`. The presence of this file greatly speeds up the creation
+     of the seed database.
 
- 4. Run `python update.py` to bring the database to its current version. This
-    will take a while to complete.
+        $ wget <todo>
+        $ python seed.py
 
- 5. Run `npm install`. This will install the backend server dependencies.
+   * You can run `python seed.py` by itself. This will build both the cache
+     file and the seed database. Be aware that this takes a very long time
+     (about 6 hours on our systems) and should probably be run overnight.
 
- 6. Go into the subdirectory `frontend` and run `bower install`. This will
-    install the frontend server dependencies.
+        $ python seed.py
 
- 7. Download `python-Levenshtein`
-    [here](http://www.lfd.uci.edu/~gohlke/pythonlibs/#python-levenshtein)
-    and download and run the installer appropriate for your system.
+ 4. Bring the database to its current version. This will take a long time
+ to complete (about 15 hours on our systems).
+
+        $ python update.py
+
+ This step is interruptible and later resumable due to the nature of SQLite's
+ transactional properties. The application will still run if this step is
+ interrupted, but the database will only be partially complete. Re-run this
+ step later to finish the update.
+
+ 5. Install the backend server dependencies.
+
+        $ npm install
+
+ 6. Install the frontend server dependencies.
+
+        $ cd frontend
+        $ bower install
+
+ 7. Download and run the installer for `python-Levenshtein` appropriate for
+    your system [here](http://www.lfd.uci.edu/~gohlke/pythonlibs/#python-levenshtein).
 
 Usage
 ===
@@ -218,6 +239,9 @@ Bugs
  * Fixlets which move from one `.fxf` file to another `.fxf` file are marked as
    having a "new" revision type even though they are not. They should be marked
    "changed" instead.
+
+ * Certain sites are not parsed correctly on the first pass of the update script.
+ 	 Subsequent sweeps of the script tend to fix the issue.
 
  * Certain fixlet IDs are duplicates, and fixlet files containing these
    duplicates fail to update properly.
