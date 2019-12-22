@@ -4,7 +4,7 @@
   "description": "A server for fixlet and site history",
   "main": "main.js",
   "dependencies": {
-    "ejs": "^1.0.0",
+    "ejs": "^3.0.1",
     "express": "^4.4.5",
     "sqlite3": "^4.1.0",
     "bower": "^1.8.8"
